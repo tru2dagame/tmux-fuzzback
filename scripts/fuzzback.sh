@@ -29,9 +29,11 @@ finder_split_cmd() {
     finder='sk-tmux'
   fi
   "$finder" \
+    --raw \
     --delimiter=":" \
     --ansi \
     --bind="$1" \
+    --bind="ctrl-r:toggle-raw" \
     --delimiter=":" \
     --layout="$finder_layout" \
     --no-multi \
@@ -50,8 +52,10 @@ fzf_popup_cmd() {
   fi
 
   fzf-tmux -p "$1" \
+    --raw \
     --ansi \
     --bind="$2" \
+    --bind="ctrl-r:toggle-raw" \
     --delimiter=":" \
     --layout="$3" \
     --no-multi \
